@@ -8,7 +8,7 @@ class PTOCalculations
   end
 
   def imulite=(imulite)
-    write_attribute(:imulite, imulite)
+    @imulite = imulite
     calculate_pto_usage
   end
 
