@@ -4,31 +4,9 @@
           	<th>Name</th>
           	<th>Hours Taken</th>
           	<th>Days Taken</th>
-          	<th>Hours Left</th>
-          	<th>Days Left</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-        </tr>
-        <tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-        </tr>
-        <tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-        </tr>
+      <%= render partial: "imulite", collection: @imulites %>
     </tbody>
 </table>

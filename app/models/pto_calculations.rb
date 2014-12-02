@@ -18,7 +18,7 @@ class PTOCalculations
     self.hours_used = self.imulite.pto_time_entries.
           where("datetime >= ? AND datetime <= ?", Date.today.beginning_of_year, Date.today.end_of_year).
           sum(:hours)
-    self.days_used = self.hours_used / 7.5
+    self.days_used = (self.hours_used / 7.5).round(2)
   end
 
 end
