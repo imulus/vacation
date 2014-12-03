@@ -26,11 +26,7 @@ class PTOCalculations
   end
 
   def pto_vesting_date
-    if self.imulite.start_date.present?
-      @pto_vesting_date ||= self.imulite.start_date + 2.years
-    else
-      @pto_vesting_date ||= Time.now - 2.years - 1.day #assume no start date means vested imulite
-    end
+    @pto_vesting_date ||= self.imulite.pto_start_date + 2.years
   end
 
   def accrued_hours
@@ -44,7 +40,7 @@ class PTOCalculations
   end
 
   def calculate_year_hours
-    start_date = self.imulite.start_date || Date.today.beginning_of_day - 2.years - 1.day
+    start_date = self.imulite.pto_start_date
     calculation_date = [start_date, Date.today.beginning_of_year].max #get whatever is newer, the start of the year or their start date
 
     @accrued_hours = 0.0
